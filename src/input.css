@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* General */
+  --disable-color: #a1a1aa;
+  
+  /* Dark Mode */
+  --logo-color: linear-gradient(90.19deg, #806BFF -2.86%, #FFFFFF 43.6%, #E8A1F9 93.2%);
+  --heading-color: #ffffff;
+  --body-color: #000000;
+  --paragraph-color: #d4d4d8;
+  --glass-color: linear-gradient(153.32deg, rgb(255 255 255 / 25%) -65.62%, rgb(118 118 118 / 24%) 83.28%);
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--paragraph-color) !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--paragraph-color) !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--paragraph-color) !important;
+}
+
+body {
+  background: url(../../dist/images/decor/decor-1.webp) left top no-repeat, url(../../dist/images/decor/decor-2.webp) right 1.5% no-repeat, url(../../dist/images/decor/decor-3.webp) left 14% no-repeat, url(../../dist/images/decor/decor-4.webp) right 30% no-repeat, url(../../dist/images/decor/decor-5.webp) left 40% no-repeat, url(../../dist/images/decor/decor-6.webp) right 50% no-repeat, url(../../dist/images/decor/decor-7.webp) left 60% no-repeat, url(../../dist/images/decor/decor-8.webp) right 70% no-repeat, url(../../dist/images/decor/decor-9.webp) left 98% no-repeat, url(../../dist/images/decor/decor-10.webp) right bottom no-repeat, url(../../dist/images/decor/decor-11.webp) left 80% no-repeat;
+  @apply bg-auto bg-no-repeat;
+}
+
+body.light-mode {
+  --logo-color: linear-gradient(105.57deg, #806BFF 10.96%, #000000 42.07%, #E8A1F9 75.28%);
+  --heading-color: #18181b;
+  --body-color: #ebe7ff;
+  --paragraph-color: #71717a;
+  --glass-color: linear-gradient(153.32deg, rgba(255, 255, 255, 0.6) -65.62%, rgba(255, 255, 255, 0.3) 25.28%);
+}
+
+header ul li a.active {
+  @apply !text-heading;
+}
+
+.button {
+  @apply inline-block rounded bg-gradient-to-r from-[#E889FF] via-[#9180FF] to-[#E889FF] px-7 py-4 text-sm font-medium text-white transition-all duration-200 lg:text-base;
+  background-position: 100%;
+  background-size: 200% 100%;
+}
+
+.button:hover {
+  background-position: 0 0;
+}
+
+.heading {
+  @apply font-darker text-4xl font-black text-heading sm:text-5xl;
+}
+
+.paragraph {
+  @apply text-sm font-normal leading-relaxed text-paragraph lg:text-base;
+}
+
+.gradient {
+  @apply bg-gradient-to-r from-[#9180FF] to-[#E889FF];
+}
+
+.logo-color {
+  @apply bg-clip-text text-transparent;
+  background: var(--logo-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-fixed {
+  background: var(--body-color);
+  @apply fixed z-10 shadow-sm;
+}
+
+.bg-main {
+  @apply shadow-sm;
+  background: var(--glass-color);
+}
+
+.hamburger-line {
+  @apply my-2 block h-[2px] w-[30px];
+  background: var(--heading-color);
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-[44deg];
+}
+
+.swiper {
+  @apply w-full h-full;
+}
+
+.swiper-slide {
+  @apply flex items-center justify-center text-center;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  background: var(--heading-color);
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active-main) {
+  @apply !opacity-50;
+  background: var(--heading-color);
+}
+
+.swiper-pagination-bullet-active-main {
+  @apply bg-white;
+}
